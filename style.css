@@ -72,6 +72,15 @@
        list-style: none;
         padding-left: 0;    /*기본적으로 왼쪽에 패딩값을 갖고있는것을 확인할수 있음*/
     }
+    li{
+        list-style: none;
+    }
+    button{
+       background-color: transparent;
+       cursor: pointer;
+       border: none;
+       outline: none; 
+    }
   /*Typography*/
   h1{
       font-size: large;
@@ -129,4 +138,33 @@
 .navbar_menu_item:hover{
     background-color: var(--color-dark-pink);
     /*border-radius: var(--size-border-radius);*/ /*위의 항목과 겹치므로 부모요소에 추가해준다*/
+}
+
+/*Home*/
+#home{
+    background:url(imgs/bgdesign1.png) center/cover no-repeat;
+    padding: 40px;
+    text-align: center; /*모든 아이템들이 가운데로 옴*/
+}
+.home_avatar{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--color-light-white);
+}
+.home_title{
+    font-size: 45px;
+}
+.home_title,
+.home_description{
+    color: white;
+}
+.home_contact{
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    margin: 24px;
+    padding: 8px 12px;
+    border:2px solid var(--color-white) ;
+    border-radius: var(--size-border-radius);
+    color: white;
 }
