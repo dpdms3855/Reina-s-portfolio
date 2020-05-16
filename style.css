@@ -52,7 +52,11 @@
     --weight-regular: 400;
     /*Size*/
     --size-border-radius: 4px;
+    /*Annimation*/
+    --animation-duration:300ms;
   }
+  
+  
 
   /*Universal tags*/
 /*공통적으로 적용해야할 태그*/
@@ -167,4 +171,61 @@
     border:2px solid var(--color-white) ;
     border-radius: var(--size-border-radius);
     color: white;
+}
+/*Section common*/
+.section{
+    padding: 50px;
+    text-align: center;
+    max-width: 1200px;  /*보통 1000~1200px이 데스크탑에서 편하게 보는 너비임*/
+    margin: auto;
+}
+/*About*/
+.about_majors{
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+.major_icon{
+    width: 170px;
+    height: 170px;
+    font-size: 70px;
+    line-height: 170px;
+    margin: auto;
+    border: 1px solid var(--color-blue);
+    border-radius: 50%;
+    margin-bottom: 16px;
+    color: var(--color-blue);
+}
+.major_title, .major_description{
+    color: var(--color-dark-grey);
+}
+.major_description{
+    font-size: small;
+}
+.major_icon:hover i{
+    color: var(--color-pink);
+    transform: rotate(-15deg) scale(1.2);
+    transition: all 300ms ease; /*애니메이션은 250~300ms정도가 사용자가 답답함을 느끼지 않는 적당한 속도*/
+}
+.job{
+    display: flex;
+    align-items: center;
+}
+.job_logo{
+    width: 80px;
+    height: 30px;
+}
+.job_description{
+    margin: 0 16px;
+    text-align: left;
+}
+.job_name,
+.job_period{
+    color: var(--color-light-grey);
+}
+.job_name{
+    font-size: var(--font-small);
+}
+.job_period{
+   font-size: var(--font-micro); 
 }
