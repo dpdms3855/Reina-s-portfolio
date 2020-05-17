@@ -93,7 +93,7 @@
       margin: 16px 0;   /*-> 개발자도구로 현재 h1태그의 너비 높이 체크해본 후에 ->상하 좌우 */
   }
   h2{
-      font-size: var(--font-regular);
+      font-size: var(--font-medium);
       font-weight: var(--weight-semi-bold);
       color: var(--color-black);
       margin: 8px 0;
@@ -410,4 +410,26 @@
 }
 .testimonial_speach-bubble a{
     color: var(--color-pink);
+}
+
+/*Contact*/
+#contact{
+    background-color: rgb(233, 126, 107);
+}
+.contact_title,
+.contact_email,
+.contact_rights{
+    color: var(--color-white);
+}
+.contact_title{
+    margin: 32px 0;
+}
+.contact_links{
+    font-size: var(--font-large);
+    margin: 24px;
+}
+.contact_links i:hover{
+    transform: scale(1.1);
+    color: var(--color-yellow);
+    transition: all var(--animation-duration) ease-in;
 }
