@@ -87,7 +87,7 @@
     }
   /*Typography*/
   h1{
-      font-size: large;
+      font-size: var(--font-large);
       font-weight: var(--weight-bold);
       columns: var(--color-black);
       margin: 16px 0;   /*-> 개발자도구로 현재 h1태그의 너비 높이 체크해본 후에 ->상하 좌우 */
@@ -116,7 +116,7 @@
 #navbar{
     display: flex;  /*항목이 옆으로 정렬 할 수 있도록*/
     justify-content: space-between; /*중심축은 수평축,,중심축에서 정렬할수 있는것은 justify content..*/
-    background-color: var(--color-pink);
+    background-color: rgb(67, 38, 95);
     align-items: center;    /*수직 기준 가운데 정렬*/
     color: var(--color-white);
     padding: 16px;
@@ -140,13 +140,13 @@
     /*border-radius: var(--size-border-radius);*/
 }
 .navbar_menu_item:hover{
-    background-color: var(--color-dark-pink);
+    background-color: rebeccapurple;
     /*border-radius: var(--size-border-radius);*/ /*위의 항목과 겹치므로 부모요소에 추가해준다*/
 }
 
 /*Home*/
 #home{
-    background:url(imgs/bgdesign1.png) center/cover no-repeat;
+    background:url(imgs/bgdesign3.png) center/cover no-repeat;
     padding: 40px;
     text-align: center; /*모든 아이템들이 가운데로 옴*/
 }
@@ -172,9 +172,7 @@
     border-radius: var(--size-border-radius);
     color: white;
 }
-.about_me{
-    font-size: var(--font-large);
-}
+
 /*Section common*/
 .section{
     padding: 50px;
@@ -190,7 +188,13 @@
 .about_majors{
     display: flex;
     justify-content: space-between;
-    margin: 80px 0;
+    padding: 90px;
+    margin: auto;
+    max-width: 1200px;
+}
+.about_me_detail{
+    max-width: 1200px;
+    margin: auto;
 }
 .major_icon{
     width: 170px;
@@ -241,6 +245,7 @@
 #skill{
     background-color: var(--color-yellow);
 }
+
 .skillset{
     display: flex;
     background-color: var(--color-light-grey);
@@ -260,7 +265,7 @@
     justify-content: space-between;
 }
 .skill{
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 .skill_bar{
     width: 100%;
@@ -280,4 +285,92 @@
 .tools,
 .etc{
     padding: 20px;
+}
+
+/*Work*/
+.work_categories{
+    margin: 40px;
+}
+.category_btn{
+    border-radius: var(--size-border-radius);
+    border: 1px solid var(--color-dark-white);
+    font-size: var(--font-regular);
+    padding: 8px 48px;
+}
+.category_btn:active,
+.category_btn:hover{
+    background-color: var(--color-pink);
+    color: var(--color-white);
+    transition: all 300ms;
+}
+.category_btn.active .category_count,   /*버튼이 액티브됐을때 카운트와, 버튼에 마우스가 갔을때 카운트*/
+.category_btn:hover .category_count{
+    opacity: 1;
+    top: 0;
+}
+.category_count{
+    background-color:var(--color-orange);
+    border-radius: 50%;
+    color: var(--color-white);
+    width: 24px;
+    height: 24px;
+
+    display: inline-block;      /*동그라미가 이상하게 생긴건 span태그가 꽉잡기때문 따라서 inline-block으로 바꿔줌*/
+    line-height: 24px;
+    position: relative;
+    top: -20px;
+    left: 6px;
+    opacity: 0;
+    transition: all var(--animation-duration) ease-in;
+}
+.work_projects{
+    display: flex;
+    flex-wrap: wrap;    /*아이템이 꽉차면 자동으로 줄바꿈하도록 래핑!*/
+    justify-content: center;
+}
+.project{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 250px;
+    margin: 2px;
+    background-color: var(--color-light-white);
+}
+.project>img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.project_description{
+    position: absolute; /*근접한 position:static;을 찾아가게됨*/
+    background-color: black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: all var(--animation-duration) ease-in;
+    transform: translateY(10px);
+}
+.project:hover .project_description{
+    opacity: .8;
+    transform: translateY(0);
+}
+.project_description h3{
+    color: var(--color-white);
+}
+.project_description h3:after{
+    content: "";
+    display: block; /*한줄에 하나씩만 들어가게끔 !*/
+    position: relative;  /*너무 왼쪽에 들어가있으니까*/
+    left: 50%;
+    width: 25px;
+    height: 2px;
+    margin-left: -12px;
+    margin-top: 8px;
+    background-color: var(--color-dark-white);
 }
