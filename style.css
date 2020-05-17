@@ -374,3 +374,40 @@
     margin-top: 8px;
     background-color: var(--color-dark-white);
 }
+
+/*Testimonial*/
+#testimonials{
+    background-color: var(--color-light-white);
+}
+.testimonials{
+    margin: 40px;
+    /*그림은 왼쪽, 글은 오른쪽 , 그리구 그 반대로 다시 한번 더*/
+
+}
+.testimonial{
+    display: flex;  /*testimonial박스가 옆으로 와야하므로*/
+    margin: 32px 0;
+}
+.testimonial_avatar{
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+    border-radius: 50%;
+}
+.testimonial_avatar:nth-child(odd){
+    margin-right: 40px;
+}
+.testimonial_avatar:nth-child(even){
+    margin-left: 40px;
+}
+.testimonial_speach-bubble{
+    padding: 18px;
+    background-color: var(--color-white);
+    border-radius: var(--size-border-radius);
+}
+.testimonial_speach-bubble p{
+    color: var(--color-light-grey);
+}
+.testimonial_speach-bubble a{
+    color: var(--color-pink);
+}
