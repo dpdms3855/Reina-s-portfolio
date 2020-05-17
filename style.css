@@ -116,7 +116,7 @@
 #navbar{
     display: flex;  /*항목이 옆으로 정렬 할 수 있도록*/
     justify-content: space-between; /*중심축은 수평축,,중심축에서 정렬할수 있는것은 justify content..*/
-    background-color: rgb(67, 38, 95);
+    background-color:#ff785a;
     align-items: center;    /*수직 기준 가운데 정렬*/
     color: var(--color-white);
     padding: 16px;
@@ -140,7 +140,7 @@
     /*border-radius: var(--size-border-radius);*/
 }
 .navbar_menu_item:hover{
-    background-color: rebeccapurple;
+    background-color: rgb(252, 185, 185);
     /*border-radius: var(--size-border-radius);*/ /*위의 항목과 겹치므로 부모요소에 추가해준다*/
 }
 
@@ -155,7 +155,7 @@
 
 /*Home*/
 #home{
-    background:url(imgs/bgdesign3.png) center/cover no-repeat;
+    background:url(imgs/bgdesign5.png) center/cover no-repeat;
     padding: 40px;
     text-align: center; /*모든 아이템들이 가운데로 옴*/
 }
