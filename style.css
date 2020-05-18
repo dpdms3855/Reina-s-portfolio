@@ -122,7 +122,7 @@
     align-items: center;    /*수직 기준 가운데 정렬*/
     color: var(--color-white);
     padding: 16px;
-    
+    z-index: 1;
 }
 #navbar.navbar__dark{
     background-color:#fd6442;
