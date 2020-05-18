@@ -111,15 +111,23 @@
     margin: 4px 0;
   }
 /*--------------------------------------------*/
-
+/**/
 /*Navbar*/
 #navbar{
+    position: fixed;
+    width: 100%;
     display: flex;  /*항목이 옆으로 정렬 할 수 있도록*/
     justify-content: space-between; /*중심축은 수평축,,중심축에서 정렬할수 있는것은 justify content..*/
-    background-color:#ff785a;
+    background-color: transparent;
     align-items: center;    /*수직 기준 가운데 정렬*/
     color: var(--color-white);
     padding: 16px;
+    
+}
+#navbar.navbar__dark{
+    background-color:#fd6442;
+    transition: all var(--animation-duration) ease-in-out;
+    padding: 8px;
 }
 .navbar_menu{
     display: flex;
@@ -158,6 +166,7 @@
     background:url(imgs/bgdesign5.png) center/cover no-repeat;
     padding: 40px;
     text-align: center; /*모든 아이템들이 가운데로 옴*/
+    padding-top: 120px;
 }
 .home_avatar{
     width: 250px;
