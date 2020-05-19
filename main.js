@@ -35,6 +35,22 @@ homeContactBtn.addEventListener('click',()=>{
    scrollIntoView('#contact')  
 });
 
+//Makr home slowly fade to transparent as the window scrolls down
+const home= document.querySelector('.home_container');
+const homeHeight= home.getBoundingClientRect().height;
+document.addEventListener('scroll',()=>{
+    home.style.opacity= 1-window.scrollY/ homeHeight;  //opacity가 1이면 완전불투명, 0이 투명이니까 
+                                                     //homrHieght이 800px이라면 스크롤이 800px일때 나누면 1이 됨->1-1=0=>투명
+})                                                      //window의 스크롤이 크면클수록  투명에 가까워지는것
+
+
+
+
+
+
+
+
+
 function scrollIntoView(selector){      //네브바 메뉴에도, 버튼에도 해당함수가 필요하므로 따로 작성.
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior:'smooth'});
