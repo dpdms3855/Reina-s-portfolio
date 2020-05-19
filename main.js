@@ -26,7 +26,16 @@ navbarMenu.addEventListener('click',(event)=>{
         return;
     }
 
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior:'smooth'});
+  scrollIntoView(link);
 });
+
+//Handle click on "contact me" button on home
+const homeContactBtn = document.querySelector('.home_contact');
+homeContactBtn.addEventListener('click',()=>{
+   scrollIntoView('#contact')  
+});
+
+function scrollIntoView(selector){      //네브바 메뉴에도, 버튼에도 해당함수가 필요하므로 따로 작성.
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+}
