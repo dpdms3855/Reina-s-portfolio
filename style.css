@@ -141,14 +141,14 @@
     padding: 8px 12px;
     margin: 0 4px;
     cursor: pointer;    /*메뉴 항목들에 대해서 클릭이 가능함을 보여줌*/
+    border: 1px solid transparent;      /*hover했을때 만 border를 주니 글자들이 움직임이 생김-> hover하지 않았을떄도 border를 주지만 투명하게 해둠.*/
     border-radius: var(--size-border-radius);
 }
-.navbar_menu_item.active{
-    border: 1px solid var(--color-white);
-    /*border-radius: var(--size-border-radius);*/
-}
+
 .navbar_menu_item:hover{
-    background-color: rgb(252, 185, 185);
+    border: 1px solid white;
+    background-color: rgb(250, 65, 74);
+    border-radius: var(--size-border-radius);
     /*border-radius: var(--size-border-radius);*/ /*위의 항목과 겹치므로 부모요소에 추가해준다*/
 }
 
@@ -315,7 +315,7 @@
     font-size: var(--font-regular);
     padding: 8px 48px;
 }
-.category_btn:active,
+.category_btn.selected,
 .category_btn:hover{
     background-color: var(--color-pink);
     color: var(--color-white);

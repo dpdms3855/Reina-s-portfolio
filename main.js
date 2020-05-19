@@ -74,8 +74,15 @@ workBtnContainer.addEventListener('click',(e)=>{
         return;
     }
 
-    projectContainer.classList.add('anime-out');
+    //Remove selection from the previous item and select the navmenu
+    const active= document.querySelector('.category_btn.selected');
+    if(active != null){
+        active.classList.remove('selected');
+    }
+    
+    e.target.classList.add('selected');
 
+    projectContainer.classList.add('anime-out');
     setTimeout(()=>{    //브라우저야~이 코드의 블럭을 0.3초 후에 실행해죠 하고 전달 후 끝맺음
         projects.forEach((project)=>{
             console.log(project.dataset.type);     
