@@ -452,9 +452,34 @@
     transition: all var(--animation-duration) ease-in;
 }
 
+/*Scroll*/
+.arrow-up{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    color: white;
+    background-color: rgb(233, 126, 107);
+    border-radius: 50%;
+    opacity: 0;  /*display none은 완전히 없어졌다가 나오는거라서 transition이 적용 안됨,,*/
+    pointer-events: none;
+    transition: opacity 300ms ease-in;/*transition을 적용하기 위해 opacity0으로 적용한다*/
+                         /*하지만 opacity는 아예 사라진게 아니기 때문에 해당 버튼요소에 마우스가 가까이가면 클릭이 가능하다..*/
+}                           /*따라서 마우스 클릭이 안되게끔 pointer-events: none;을 만들어준다.*/
+.arrow-up.visible{
+    opacity: 1;    
+    pointer-events: auto;
+}
+
+
+
 /*For below 768px screen width*/
 @media screen and (max-width: 768px){
+   .navbar_toggle-btn{
     display: block;
+   }
 
 #navbar{
     flex-direction: column;

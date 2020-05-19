@@ -41,12 +41,25 @@ const homeHeight= home.getBoundingClientRect().height;
 document.addEventListener('scroll',()=>{
     home.style.opacity= 1-window.scrollY/ homeHeight;  //opacity가 1이면 완전불투명, 0이 투명이니까 
                                                      //homrHieght이 800px이라면 스크롤이 800px일때 나누면 1이 됨->1-1=0=>투명
-})                                                      //window의 스크롤이 크면클수록  투명에 가까워지는것
+});                                                  //window의 스크롤이 크면클수록  투명에 가까워지는것
 
 
+const arrowUp = document.querySelector('.arrow-up');
+//Show "arrow-up" button when scrolling down
+document.addEventListener('scroll',()=>{
+   
+    if(window.scrollY>homeHeight/2){
+        arrowUp.classList.add('visible');
+    }else{      //스크롤이 위에 있는 경우엔 보여지면 안되므로
+        arrowUp.classList.remove('visible');
+    }
+});
 
-
-
+//Handle click on the 'arrow-up'button
+arrowUp.addEventListener('click',()=>{
+    scrollIntoView("#home");
+    console.log("dd")
+});
 
 
 
