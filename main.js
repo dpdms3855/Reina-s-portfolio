@@ -62,6 +62,39 @@ arrowUp.addEventListener('click',()=>{
 });
 
 
+//Projects
+const workBtnContainer=document.querySelector('.work_categories');
+const projectContainer=document.querySelector('.work_projects');
+const projects = document.querySelectorAll('.project'); //4개의 프로젝트가 담긴 배열이 만들어짐
+
+workBtnContainer.addEventListener('click',(e)=>{
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    console.log(filter);
+    if(filter==null){
+        return;
+    }
+
+    projectContainer.classList.add('anime-out');
+
+    setTimeout(()=>{    //브라우저야~이 코드의 블럭을 0.3초 후에 실행해죠 하고 전달 후 끝맺음
+        projects.forEach((project)=>{
+            console.log(project.dataset.type);     
+            //버튼을 누르면 해당 프로젝트만 나오게끔 하기
+            if(filter==='*'||filter===project.dataset.type){   //만약 선택한 필터가 전부 다 보여지는 all이거나, 
+               project.classList.remove('invisible');              //혹은, 선택한 필터와 필터가 프로젝트에 있는 데이타 셋 타입이 같으면
+            }else{                                                 //보여줘야하니까 안보여지는 클래스를 없애고,,
+               project.classList.add('invisible');              //타입이 필터와 동일하지않으면
+            }                                                      //안보여야 하니까 안보여지는 클래스를 add한다.
+           });
+        projectContainer.classList.remove('anime-out');
+    },300)
+    /*0.3초가 지났을때 그때 필터링을해서 애니메이션을 지워주는,,
+    setTimeout에 전달한 이런 함수는 0.3초 이후에 브라우저로부터 호출된다.
+    */ 
+});
+
+
+
 
 
 function scrollIntoView(selector){      //네브바 메뉴에도, 버튼에도 해당함수가 필요하므로 따로 작성.
