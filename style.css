@@ -518,15 +518,20 @@
 #navbar.navbar__dark{
     padding: 16px;
 }
-.navbar_menu{
+#navbarMenu{
+    display: none;
     flex-direction: column;
     text-align: center;
     width: 100%;
-    display: none;
 }
-.navbar_menu.open{
+#navbarMenu.open{
     display: block;
+    font-size: 13.5px;
 }
+#navbarMenu.open .navbar_menu{
+    flex-direction: column;
+}
+
 .section{
     padding: 16px;
     padding-top: 40px;

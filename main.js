@@ -34,8 +34,9 @@ navbarMenu.addEventListener('click',(event)=>{
 
 //Navbar toggle button for small screen
 const navbarToggleBtn = document.querySelector('.navbar_toggle-btn');
+const menu =document.querySelector('#navbarMenu');
 navbarToggleBtn.addEventListener('click', () => {
-    navbarMenu.classList.toggle('open');
+    menu.classList.toggle('open');
 });
 
 
