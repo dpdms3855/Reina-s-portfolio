@@ -190,7 +190,9 @@
     border-radius: var(--size-border-radius);
     color: white;
 }
-
+.home_contact:hover{
+    background-color:  rgb(245, 176, 119);
+}
 /*Section common*/
 .section{
     padding: 50px;
@@ -314,6 +316,7 @@
     border: 1px solid var(--color-dark-white);
     font-size: var(--font-regular);
     padding: 8px 48px;
+    position: relative;
 }
 .category_btn.selected,
 .category_btn:hover{
@@ -332,12 +335,11 @@
     color: var(--color-white);
     width: 24px;
     height: 24px;
-
+    position: absolute;
     display: inline-block;      /*동그라미가 이상하게 생긴건 span태그가 꽉잡기때문 따라서 inline-block으로 바꿔줌*/
     line-height: 24px;
-    position: relative;
     top: -20px;
-    left: 6px;
+    right: 16px;
     opacity: 0;
     transition: all var(--animation-duration) ease-in;
 }
@@ -388,16 +390,16 @@
     transform: translateY(0);
 }
 .project_description h3{
-    color: var(--color-white);
+    color: var(--color-orange);
 }
 .project_description h3:after{
     content: "";
     display: block; /*한줄에 하나씩만 들어가게끔 !*/
     position: relative;  /*너무 왼쪽에 들어가있으니까*/
     left: 50%;
-    width: 25px;
+    width: 50px;
     height: 2px;
-    margin-left: -12px;
+    transform: translateX(-50%);
     margin-top: 8px;
     background-color: var(--color-dark-white);
 }
@@ -486,13 +488,35 @@
 
 /*For below 768px screen width*/
 @media screen and (max-width: 768px){
-   .navbar_toggle-btn{
+:root{/*미디어쿼리일때는 해당 폰트사이즈 변수들이 적용되게끔 한다.*/
+     /* Font size */
+  
+     --font-large: 30px;
+  
+     --font-medium: 18px;
+   
+     --font-regular: 16px;
+   
+     --font-small: 14px;
+   
+     --font-micro: 12px;
+   
+}
+.navbar_toggle-btn{
     display: block;
-   }
+    top: 16px;
+    right: 16px;
+    font-size: medium;
+}
 
 #navbar{
     flex-direction: column;
     align-items: flex-start;
+    background-color: #fd6442;
+    
+}
+#navbar.navbar__dark{
+    padding: 16px;
 }
 .navbar_menu{
     flex-direction: column;
@@ -500,26 +524,57 @@
     width: 100%;
     display: none;
 }
+.navbar_menu.open{
+    display: block;
+}
+.section{
+    padding: 16px;
+    padding-top: 40px;
+}
 
 .about_majors{
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
 }
 .major{
-    margin-bottom: 38px;
+    margin-bottom: 30px;
 }
 .skillset{
     flex-direction: column;
 }
+.category_btn{
+    margin: 4px 0;
+    width: 100%;
+}
 .project{
     flex-grow: 1;   /*화면이 작아졌을때 프로젝트 사진이 옆 여박을 다 차지할수 있게끔*/
 }
-.testimonial_avatar{
-    width: 80px;
-    height: 80px;
+.testimonial{
+    flex-direction: column; /*이미지가 위로, 말상자가 아래로 배치하기 위해*/
+    align-items: center;
 }
-
-
-
-
-
+.testimonial_avatar{
+    width: 120px;
+    height: 120px;
+}
+/*아바타가 항상 먼저오고, 스피치버블은 뒤에 오도록 하기*/
+.testimonial_speach-bubble{
+    order: 1; /*아바타보다 더 큰 order을 갖고있으니까 아바타의 뒤로가야해*/
+}
+.testimonial_avatar:nth-child(even){
+    margin: 0;
+    margin-bottom: 8px;
+}
+.testimonial_avatar:nth-child(odd){
+    margin: 0;
+    margin-bottom: 8px;
+}
+.arrow-up{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
 }

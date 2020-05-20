@@ -17,8 +17,11 @@ document.addEventListener('scroll',()=>{
     //스트롤이 될때마다 블럭안에서 작성한 코드가 실행하도록,,,
 
 
+
+
 //Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar_menu');
+
 navbarMenu.addEventListener('click',(event)=>{
     const target= event.target;
     const link = target.dataset.link;
@@ -29,13 +32,23 @@ navbarMenu.addEventListener('click',(event)=>{
   scrollIntoView(link);
 });
 
+//Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar_toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+});
+
+
+
+
+
 //Handle click on "contact me" button on home
 const homeContactBtn = document.querySelector('.home_contact');
 homeContactBtn.addEventListener('click',()=>{
    scrollIntoView('#contact')  
 });
 
-//Makr home slowly fade to transparent as the window scrolls down
+//Make home slowly fade to transparent as the window scrolls down
 const home= document.querySelector('.home_container');
 const homeHeight= home.getBoundingClientRect().height;
 document.addEventListener('scroll',()=>{
